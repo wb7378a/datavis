@@ -63,7 +63,7 @@ I would use the geographical map to illustrate how states with larger population
 <div id="article"></div>
 <script>
 
-function WriteNewsStory (titlenumber, company, symbol, day, quarter, income, city, netincome, earnings, pershare, revenue, survey, rangeone, rangetwo, rangethree, rangefour, percent, percent2, percent3, nummonths) {
+function WriteNewsStory (titlenumber, company, symbol, day, quarter, income, city, netincome, earnings, pershare, companytype, revenue, survey, quarterend, company, rangeone, rangetwo, rangethree, rangefour, percent, percent2, percent3, nummonths) {
 
 //var message="Hello, world!"; 
 
@@ -128,6 +128,20 @@ else {
 surveypretty = survey;
 }
 
+var quarterendpretty;
+if (quarterend == 3) {
+quarterendpretty ="January"; }
+
+else if (quarterend == 4) {
+quarterendpretty = "April"; }
+
+else if (quarterend == 1) {
+quarterendpretty = "July"; }
+
+else if (quarterend == 2){
+quarterendpretty = "October";
+}
+
 $("#article").append ("<h1>" + company + " beats " + titlenumberpretty + " profit forecasts" + "</h2>")
 
 $("#article").append ("<p>" + company + " ("+symbol+") on " + day + " reported fiscal " + quarter + "-quarter net income of $" + incomepretty + "." + "</p>"); 
@@ -139,13 +153,11 @@ console.log ("On a per-share basis, the " + city + "-based company said it had n
 $("#article").append ("<p>" + "The results topped Wall Street expectations. The average estimate of eight analysts surveyed by Zacks Investment Research was for earnings of " + persharepretty + "." + "</p>"); 
 console.log ("The results topped Wall Street expectations. The average estimate of eight analysts surveyed by Zacks Investment Research was for earnings of " + persharepretty); 
 
-$("#article").append ("<p>" + "The department store operator posted revenue of $" + revenuepretty + " in the period, which did not meet Street forecasts. Five analysts surveyed expected $" + surveypretty + "." + "</p>");
-console.log ("The department store operator posted revenue of $" + revenuepretty + " in the period, which did not meet Street forecasts. Five analysts surveyed expected $" + surveypretty);
+$("#article").append ("<p>" + "The " + companytype + " posted revenue of $" + revenuepretty + " in the period, which did not meet Street forecasts. Five analysts surveyed expected $" + surveypretty + "." + "</p>");
+console.log ("The " + companytype + " posted revenue of $" + revenuepretty + " in the period, which did not meet Street forecasts. Five analysts surveyed expected $" + surveypretty); 
 
-"The department store operator posted revenue of $" + revenuepretty + " in the period, which did not meet Street forecasts. Five analysts surveyed expected $" + surveypretty
-
-$("#article").append ("<p>" + "For the current quarter ending in January, Macy's expects its per-share earnings to range from $" + rangeone + " to $" + rangetwo + "." + "</p>");
-console.log ("For the current quarter ending in January, Macy's expects its per-share earnings to range from $" + rangeone + " to $" + rangetwo);
+$("#article").append ("<p>" + "For the current quarter ending in "+ quarterendpretty + "," + " " + company + " expects its per-share earnings to range from $" + rangeone + " to $" + rangetwo + "." + "</p>");
+console.log ("For the current quarter ending in "+ quarterendpretty + "," + " " + company + " expects its per-share earnings to range from $" + rangeone + " to $" + rangetwo);
 
 $("#article").append ("<p>" + "The company expects full-year earnings in the range of $" + rangethree + " to $" + rangefour + " per share." + "</p>");
 console.log ( "The company expects full-year earnings in the range of $" + rangethree + " to $" + rangefour + " per share."); 
@@ -156,12 +168,11 @@ console.log (company + " shares have decreased " + percent + " percent since the
 
 }
 
-WriteNewsStory (3, "Macy's", "M", "Wednesday", 3, 118000000, "Cincinnati", 0.36, 0.56, 0.54, 5870000000, 6150000000, 2.54, 2.64, 4.20, 4.30, 28, 1, 21, 12);   
+WriteNewsStory (3, "Macy's", "M", "Wednesday", 3, 118000000, "Cincinnati", 0.36, 0.56, 0.54, "department store operator", 5870000000, 6150000000, 3, "Macy's", 2.54, 2.64, 4.20, 4.30, 28, 1, 21, 12);   
 
-WriteNewsStory (4, "JournalismCoders", "CODE", "Friday", 7, "900,000", "Washington, D.C.", .01, .22, .24, "99,823", "234,621", 1.9, 2.3333, 1.1, 1.3, 77, 2, 34, 12); 
+WriteNewsStory (4, "JournalismCoders", "CODE", "Friday", 7, "900,000", "Washington, D.C.", .01, .22, .24, "tech startup company", "99,823", "234,621", 4, "JournalismCoders", 1.9, 2.3333, 1.1, 1.3, 77, 2, 34, 12); 
 
 </script>
-
 
 <h2>Class 4</h2>
 
