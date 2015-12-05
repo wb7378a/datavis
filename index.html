@@ -5,6 +5,30 @@
 <link rel="stylesheet" href="style.css" />
 <meta charset="utf-8" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+ <script src="bower_components/squared/dist/squared.js"></script>
+  
+  
+  <style type="text/css">
+.squared-geog {
+    background-color: #FDC26D;
+}
+.squared-geog.small {
+    background-color: red;
+    color: white;
+    font-family: 'Lato', sans-serif;
+}
+.squared-geog.medium {
+    background-color: green;
+    color: white;
+    font-family: 'Lato', sans-serif;
+}
+.squared-geog.large {
+    background-color: blue;
+    color: white;
+    font-family: 'Lato', sans-serif;
+}
+  </style>  
 
 </head>
 <body>
@@ -212,14 +236,80 @@ for (var i = 0; i < doctors; i++) {
 
 
 <h2>Class 5</h2>
- <ul>
-  	<li>
-      <p>In-Class Exercises</p>
-      <p>Homework</p>
-    </li>
-  </ul>
+ <h1>Percent Uninsured</h1>
+<div id="map" style="width: 600px; height: 400px"></div>
+</body>
+  
+<script>
+var mydata = [
+{"full_name":"Alabama","name":"AL","Percent_Uninsured":13.5},
+{"full_name":"Alaska","name":"AK","Percent_Uninsured":19.1},
+{"full_name":"Arizona","name":"AZ","Percent_Uninsured":16.3},
+{"full_name":"Arkansas","name":"AR","Percent_Uninsured":15.8},
+{"full_name":"California","name":"CA","Percent_Uninsured":16.7},
+{"full_name":"Colorado","name":"CO","Percent_Uninsured":13.9},
+{"full_name":"Connecticut","name":"CT","Percent_Uninsured":8.5},
+{"full_name":"Delaware","name":"DE","Percent_Uninsured":9},
+{"full_name":"Florida","name":"FL","Percent_Uninsured":6.4},
+{"full_name":"Georgia","name":"GA","Percent_Uninsured":19.6},
+{"full_name":"Hawaii","name":"HI","Percent_Uninsured":18.3},
+{"full_name":"Idaho","name":"ID","Percent_Uninsured":6.7},
+{"full_name":"Illinois","name":"IL","Percent_Uninsured":16},
+{"full_name":"Indiana","name":"IN","Percent_Uninsured":12.3},
+{"full_name":"Iowa","name":"IA","Percent_Uninsured":13.8},
+{"full_name":"Kansas","name":"KS","Percent_Uninsured":8.1},
+{"full_name":"Kentucky","name":"KY","Percent_Uninsured":12.2},
+{"full_name":"Louisiana","name":"LA","Percent_Uninsured":13.2},
+{"full_name":"Maine","name":"ME","Percent_Uninsured":16.6},
+{"full_name":"Maryland","name":"MD","Percent_Uninsured":10.4},
+{"full_name":"Massachusetts","name":"MA","Percent_Uninsured":9.9},
+{"full_name":"Michigan","name":"MI","Percent_Uninsured":3.8},
+{"full_name":"Minnesota","name":"MN","Percent_Uninsured":10.9},
+{"full_name":"Mississippi","name":"MS","Percent_Uninsured":7.9},
+{"full_name":"Missouri","name":"MO","Percent_Uninsured":16.8},
+{"full_name":"Montana","name":"MT","Percent_Uninsured":12.9},
+{"full_name":"Nebraska","name":"NE","Percent_Uninsured":16.7},
+{"full_name":"Nevada","name":"NV","Percent_Uninsured":11},
+{"full_name":"New Hampshire","name":"NH","Percent_Uninsured":20.3},
+{"full_name":"New Jersey","name":"NJ","Percent_Uninsured":10.3},
+{"full_name":"New Mexico","name":"NM","Percent_Uninsured":12.5},
+{"full_name":"New York","name":"NY","Percent_Uninsured":18.1},
+{"full_name":"North Carolina","name":"NC","Percent_Uninsured":10.6},
+{"full_name":"North Dakota","name":"ND","Percent_Uninsured":15.5},
+{"full_name":"Ohio","name":"OH","Percent_Uninsured":9.5},
+{"full_name":"Oklahoma","name":"OK","Percent_Uninsured":10.9},
+{"full_name":"Oregon","name":"OR","Percent_Uninsured":17.7},
+{"full_name":"Pennsylvania","name":"PA","Percent_Uninsured":14.4},
+{"full_name":"Rhode Island","name":"RI","Percent_Uninsured":9.5},
+{"full_name":"South Carolina","name":"SC","Percent_Uninsured":10.5},
+{"full_name":"South Dakota","name":"SD","Percent_Uninsured":15.9},
+{"full_name":"Tennessee","name":"TN","Percent_Uninsured":11.3},
+{"full_name":"Texas","name":"TX","Percent_Uninsured":13.6},
+{"full_name":"Utah","name":"UT","Percent_Uninsured":21.9},
+{"full_name":"Vermont","name":"VT","Percent_Uninsured":14.3},
+{"full_name":"Virginia","name":"VA","Percent_Uninsured":6.7},
+{"full_name":"Washington","name":"WA","Percent_Uninsured":12.1},
+{"full_name":"Washington, D.C.","name":"DC","Percent_Uninsured":12.9},
+{"full_name":"West Virginia","name":"WV","Percent_Uninsured":13.2},
+{"full_name":"Wisconsin","name":"WI","Percent_Uninsured":8.7},
+{"full_name":"Wyoming","name":"WY","Percent_Uninsured":14.2}
+];
+  map = new Squared("map");
+  map.make();
+   map.data(mydata, "name");
+    console.log(mydata);
+    map.addClass(function(d){
+      if(d.Percent_Uninsured < 5)
+        return "small";
+       else if(d.Percent_Uninsured < 15)
+         return "medium";
+       else return "large";
+    });
 
- 
+</script>
+<h4>Made by Windye Barton: Data Source: U.S. Census Bureau/American Community Survey 2014</h4>
+</body>
+
 <h2>Class 6</h2>
 <ul>
   	<li>
